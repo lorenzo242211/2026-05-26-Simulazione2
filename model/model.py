@@ -55,11 +55,11 @@ class Model:
         # Ciclo su TUTTI i nodi del grafo provandoli come punto di partenza
         for nodo_partenza in self.grafo.nodes:
             parziale = [nodo_partenza]
-            self.ricorsione_eta(parziale)
+            self.ricorsione(parziale)
 
         return self.best_percorso
 
-    def ricorsione_eta(self, parziale):
+    def ricorsione(self, parziale):
         # 1. Condizione di ottimalità
         if len(parziale) > len(self.best_percorso):
             self.best_percorso = list(parziale)
@@ -72,5 +72,5 @@ class Model:
                 if vicino.date_of_birth is not None and ultimo_nodo.date_of_birth is not None:
                     if vicino.date_of_birth > ultimo_nodo.date_of_birth:
                         parziale.append(vicino)
-                        self.ricorsione_eta(parziale)
+                        self.ricorsione(parziale)
                         parziale.pop()
