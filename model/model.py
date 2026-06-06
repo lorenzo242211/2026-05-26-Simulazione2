@@ -48,7 +48,7 @@ class Model:
     def getInfo(self):
         return self.grafo.number_of_nodes(), self.grafo.number_of_edges()
 
-    # --- RICORSIONE GLOBALE ---
+    # --- RICORSIONE GLOBALE --
     def getPercorsoPiuLungo(self):
         self.best_percorso = []
 
